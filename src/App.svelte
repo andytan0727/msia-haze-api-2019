@@ -1,23 +1,25 @@
 <script>
-  import { onMount } from "svelte";
-  export let name;
-  export let date;
-
-  onMount(async () => {
-    const res = await fetch("/api/getApi");
-    const newDate = await res.text();
-    date = newDate;
-  });
+  import axios from "axios";
+  import Navbar from "./components/Navbar.svelte";
+  import Loader from "./components/Loader.svelte";
+  import DataTable from "./components/DataTable.svelte";
+  import DataTableKeys from "./components/DataTableKeys.svelte";
 </script>
 
 <style>
-  h1 {
-    color: purple;
-  }
+
 </style>
 
-<main>
-  <h1>Hello {name}!</h1>
-  <h2>The date according to Node.js is:</h2>
-  <p>{date ? date : 'Loading date...'}</p>
+<Navbar />
+<main class="container d-flex">
+
+  {#await axios.get('/api/getApi')}
+    <Loader />
+  {:then res}
+    <DataTable tableData={res.data['24hour_api']} />
+    <DataTableKeys />
+  {:catch error}
+    <div class="alert alert-danger" role="alert">{error.message}</div>
+  {/await}
+
 </main>
