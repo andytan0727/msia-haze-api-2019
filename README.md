@@ -1,69 +1,38 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# MSIA Haze API 2019
 
----
-
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+This is a simple project built on top of [APIMS](http://apims.doe.gov.my/public_v2/api_table.html) table. It adds some features missing in the source table such as sorting data and filter, with the same information shown.
 
 
-## Get started
-
+## Get started for local development
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd msia-haze-api-2019
 npm install
 ```
 
-...then start [Rollup](https://rollupjs.org):
+This app uses [now](https://zeit.co/now). So ensure that you have `now cli` installed:
 
 ```bash
-npm run dev
+npm install -g now
+now --version
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+then start our local development server with `now`:
+```bash
+now dev
+```
 
+Navigate to [localhost:3000](http://localhost:3000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
 
 ## Deploying to the web
 
 ### With [now](https://zeit.co/now)
 
-Install `now` if you haven't already:
-
+From within the project folder:
 ```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
 now
 ```
 
 As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
 
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
