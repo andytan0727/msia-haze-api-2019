@@ -36,3 +36,6 @@ now
 
 As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
 
+## License
+
+MIT © 2019 [Andy Tan](https://github.com/andytan0727)
